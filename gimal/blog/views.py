@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post
+from .models import Post, Comment
 from django.views import generic
 from django.views.generic import View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -20,4 +20,8 @@ class DetailView(generic.DetailView):
 class PostCreate(CreateView):
     model = Post
     fields = ('title', 'content', 'image')
+
+class CommentCreate(CreateView):
+    model = Comment
+    fields = '__all__'
 

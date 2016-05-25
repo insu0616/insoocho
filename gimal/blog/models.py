@@ -20,5 +20,8 @@ class Comment(models.Model):
     post = models.ForeignKey(Post)
     content = models.TextField(max_length=200)
 
+    def get_absolute_url(self):
+        return reverse('blog:detail', kwargs={'pk': self.post.pk})
+
     def __str__(self):
         return self.content
