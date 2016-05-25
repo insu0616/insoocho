@@ -14,3 +14,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post)
+    content = models.TextField(max_length=200)
+
+    def __str__(self):
+        return self.content
