@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block body %}
+<div class="row">
+    <div class="container">
+        <div class="panel panel-default col-sm-offset-4 col-sm-4">
+            <h1>{{ post.title }}</h1><hr>
+            <p><img src="{{ post.image.url }}"/><p><hr>
+            <p>{{ post.content }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -3,7 +3,7 @@
 {% block body %}
     {% for post in posts %}
         <ul>
-            {{ post.title }}
+            <a href="{% url 'blog:detail' post.pk %}">{{ post.title }}</a>
         </ul>
     {% endfor %}
 {% endblock %}
