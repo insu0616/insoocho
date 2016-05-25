@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Post
 from django.views import generic
 from django.views.generic import View
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
 # Create your views here.
 
 class IndexView(generic.ListView):
@@ -14,3 +16,8 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Post
     template_name = "blog/detail.html"
+
+class PostCreate(CreateView):
+    model = Post
+    fields = ('title', 'content', 'image')
+
